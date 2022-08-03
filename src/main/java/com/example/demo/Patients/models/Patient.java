@@ -20,6 +20,7 @@ public class Patient {
     private String lastName;
 
     private String pesel;
+    private String email;
 
     @OneToOne
     private Address address;

@@ -2,6 +2,7 @@ package com.example.demo.Patients;
 
 import com.example.demo.Patients.models.Patient;
 import com.example.demo.Patients.models.PatientCommand;
+import com.example.demo.Patients.models.PatientListDTO;
 import com.example.demo.Patients.models.PatientWebInput;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class PatientController {
 
     @GetMapping
     @ResponseStatus(value = HttpStatus.OK)
-    public List<Patient> getPatients() {
+    public List<PatientListDTO> getPatients() {
         return patientService.getAllPatients();
     }
 
