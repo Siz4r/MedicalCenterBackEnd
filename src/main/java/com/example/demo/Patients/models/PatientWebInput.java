@@ -1,6 +1,6 @@
 package com.example.demo.Patients.models;
 
-import com.example.demo.Addresses.AddressWebInput;
+import com.example.demo.Addresses.models.AddressWebInput;
 import lombok.Getter;
 
 @Getter

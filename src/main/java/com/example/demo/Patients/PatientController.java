@@ -30,4 +30,24 @@ public class PatientController {
         return patientService.addPatient(PatientCommand.builder().patientWebInput(webInput).build());
     }
 
+
+    @PutMapping("/{id}")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT, reason = "Resource updated successfully")
+    public void updatePatient(@RequestBody @Valid PatientWebInput webInput, @PathVariable("id") UUID id) {
+        patientService.updatePatient(PatientCommand.builder()
+                .id(id)
+                .patientWebInput(webInput).build());
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void deletePatient(@PathVariable("id") UUID id) {
+        patientService.deletePatient(id);
+    }
+
+    @DeleteMapping
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void deletePatient(@RequestBody List<UUID> ids) {
+        patientService.deleteAllPatients(ids);
+    }
 }

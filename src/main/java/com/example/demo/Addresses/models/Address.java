@@ -1,18 +1,17 @@
-package com.example.demo.Addresses;
+package com.example.demo.Addresses.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.example.demo.Patients.models.Patient;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.util.UUID;
 
 @Entity
 @Builder
 @AllArgsConstructor @NoArgsConstructor
-@Setter
+@Setter @Getter
 public class Address {
     @Id
     private UUID id;
@@ -21,4 +20,8 @@ public class Address {
     private String postalCode;
     private int buildingNumber;
     private int apartmentNumber;
+
+    @OneToOne(mappedBy = "address")
+    private Patient patient;
+
 }

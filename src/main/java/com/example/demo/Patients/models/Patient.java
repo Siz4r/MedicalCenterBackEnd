@@ -1,11 +1,9 @@
 package com.example.demo.Patients.models;
 
-import com.example.demo.Addresses.Address;
+import com.example.demo.Addresses.models.Address;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
@@ -22,6 +20,12 @@ public class Patient {
     private String pesel;
     private String email;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
     private Address address;
+
+    public void setAddress(Address address) {
+        this.address = address;
+        address.setPatient(this);
+    }
 }
