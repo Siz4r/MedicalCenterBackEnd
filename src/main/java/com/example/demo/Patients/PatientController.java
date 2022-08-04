@@ -1,6 +1,5 @@
 package com.example.demo.Patients;
 
-import com.example.demo.Patients.models.Patient;
 import com.example.demo.Patients.models.PatientCommand;
 import com.example.demo.Patients.models.PatientListDTO;
 import com.example.demo.Patients.models.PatientWebInput;

@@ -25,7 +25,6 @@ public class PatientService {
 
     public List<PatientListDTO> getAllPatients() {
         return patientRepository.findAll().stream()
-                .peek(p -> System.out.println(p.getAddress()))
                 .map(p -> modelMapper.map(p, PatientListDTO.class))
                 .collect(Collectors.toList());
     }
@@ -39,8 +38,8 @@ public class PatientService {
         patient.setId(id);
         patient.setAddress(address);
 
-        patientRepository.save(patient);
         addressRepository.save(address);
+        patientRepository.save(patient);
 
         return id;
     }
