@@ -1,6 +1,6 @@
-package com.example.demo.projectParticipant;
+package com.example.demo.Projects.projectParticipant;
 
-import com.example.demo.projectParticipant.models.ProjectParticipation;
+import com.example.demo.Projects.projectParticipant.models.ProjectParticipation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

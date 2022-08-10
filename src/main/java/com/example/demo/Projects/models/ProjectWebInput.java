@@ -1,2 +1,4 @@
-package com.example.demo.Projects.models;public class ProjectWebInput {
+package com.example.demo.Projects.models;
+
+public record ProjectWebInput(String name) {
 }

@@ -1,4 +1,4 @@
-package com.example.demo.projectParticipant.models;
+package com.example.demo.Projects.projectParticipant.models;
 
 import com.example.demo.Patients.models.Patient;
 import com.example.demo.Projects.models.Project;

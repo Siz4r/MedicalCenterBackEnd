@@ -15,7 +15,7 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter
-public class ResearchResult {
+public class OrderResearch {
     @Id
     private UUID id;
 
@@ -33,7 +33,7 @@ public class ResearchResult {
 
     public void addResearch(Research research) {
         setResearch(research);
-        research.getResearchesResults().add(this);
+        research.getOrderResearches().add(this);
     }
 
     public void addOrder(Order order) {

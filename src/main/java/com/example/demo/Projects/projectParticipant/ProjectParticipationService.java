@@ -1,10 +1,10 @@
-package com.example.demo.projectParticipant;
+package com.example.demo.Projects.projectParticipant;
 
 import com.example.demo.Exceptions.IncorrectIdInputException;
 import com.example.demo.Patients.PatientRepository;
 import com.example.demo.Projects.ProjectRepository;
 import com.example.demo.beans.idGenerator.IdGenerator;
-import com.example.demo.projectParticipant.models.ProjectParticipation;
+import com.example.demo.Projects.projectParticipant.models.ProjectParticipation;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

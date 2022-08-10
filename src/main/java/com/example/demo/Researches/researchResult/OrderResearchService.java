@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @Service
 @AllArgsConstructor
-public class ResearchService {
+public class OrderResearchService {
     private final IdGenerator idGenerator;
     private final OrderResearchRepository orderResearchRepository;
     private final ResearchRepository researchRepository;
@@ -39,5 +39,13 @@ public class ResearchService {
 
     public void deleteOrderResearch (UUID orderResearchId) {
         orderResearchRepository.deleteById(orderResearchId);
+    }
+
+    public void updateOrderResearchResult(UUID id, String result) {
+        var orderResearch = orderResearchRepository.findById(id).orElseThrow(IncorrectIdInputException::new);
+
+        orderResearch.setResult(result);
+
+        orderResearchRepository.save(orderResearch);
     }
 }

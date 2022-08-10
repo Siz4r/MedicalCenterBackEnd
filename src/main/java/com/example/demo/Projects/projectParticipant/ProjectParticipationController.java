@@ -1,4 +1,4 @@
-package com.example.demo.projectParticipant;
+package com.example.demo.Projects.projectParticipant;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

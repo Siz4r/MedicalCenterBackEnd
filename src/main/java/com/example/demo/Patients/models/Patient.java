@@ -1,9 +1,11 @@
 package com.example.demo.Patients.models;
 
 import com.example.demo.Addresses.models.Address;
+import com.example.demo.Projects.projectParticipant.models.ProjectParticipation;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -24,8 +26,20 @@ public class Patient {
     @JoinColumn(name = "address_id")
     private Address address;
 
+    @OneToMany(
+            orphanRemoval = true,
+            cascade = CascadeType.MERGE,
+            mappedBy = "patient"
+    )
+    private Set<ProjectParticipation> projectParticipations;
+
     public void setAddress(Address address) {
         this.address = address;
         address.setPatient(this);
+    }
+
+    public void addProjectParticipation(ProjectParticipation projectParticipation) {
+        projectParticipations.add(projectParticipation);
+        projectParticipation.setPatient(this);
     }
 }
