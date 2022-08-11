@@ -5,5 +5,7 @@ import lombok.Builder;
 import java.util.UUID;
 
 @Builder
-public record ProjectCommand(ProjectWebInput webInput, UUID id) {
+public class ProjectCommand {
+    private ProjectWebInput webInput;
+    private UUID id;
 }

@@ -13,6 +13,5 @@ public interface PatientMapper {
     PatientMapper INSTANCE = Mappers.getMapper( PatientMapper.class );
     PatientListDTO patientToListDTO(Patient patient);
 
-    @Mapping(target = "ccity", source = "city")
     AddressListDTO addressToListDTO(Address address);
 }
