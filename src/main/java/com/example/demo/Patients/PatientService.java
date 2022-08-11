@@ -3,11 +3,13 @@ package com.example.demo.Patients;
 import com.example.demo.Addresses.AddressRepository;
 import com.example.demo.Addresses.models.Address;
 import com.example.demo.Exceptions.IncorrectIdInputException;
+import com.example.demo.Mappers.PatientMapper;
 import com.example.demo.Patients.models.Patient;
 import com.example.demo.Patients.models.PatientCommand;
 import com.example.demo.Patients.models.PatientListDTO;
 import com.example.demo.beans.idGenerator.IdGenerator;
 import lombok.AllArgsConstructor;
+import org.mapstruct.factory.Mappers;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +27,7 @@ public class PatientService {
 
     public List<PatientListDTO> getAllPatients() {
         return patientRepository.findAll().stream()
-                .map(p -> modelMapper.map(p, PatientListDTO.class))
+                .map(PatientMapper.INSTANCE::patientToListDTO)
                 .collect(Collectors.toList());
     }
 
